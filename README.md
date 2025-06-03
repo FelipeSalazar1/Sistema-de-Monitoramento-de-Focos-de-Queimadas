@@ -28,7 +28,7 @@
 
 ## 📌 Funcionalidades Implementadas
 
-✅ **CRUD Completo para Sensores, Focos de Incêndio, Alertas e Agentes Ambientais**  
+✅ **CRUD Completo para Regiões, Sensores, Focos de Incêndio, Alertas e Agentes Ambientais**  
 ✅ **Validações com Spring Boot**  
 ✅ **Autenticação e Autorização com Spring Security (BasicAuth)**  
 ✅ **Migração automática de banco de dados com Flyway**  
