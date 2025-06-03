@@ -13,12 +13,14 @@
  ┃ ┣ 📂 main
  ┃ ┃ ┣ 📂 java
  ┃ ┃ ┃ ┣ 📂 com.fiap.queimadas.monitoramentos
+ ┃ ┃ ┃ ┃ ┣ 📂 config
  ┃ ┃ ┃ ┃ ┣ 📂 controller
  ┃ ┃ ┃ ┃ ┣ 📂 service
  ┃ ┃ ┃ ┃ ┣ 📂 domain.model
  ┃ ┃ ┃ ┃ ┣ 📂 dto
+ ┃ ┃ ┃ ┃ ┣ 📂 mapper
  ┃ ┃ ┃ ┃ ┣ 📂 repository
- ┃ ┃ ┃ ┃ ┗ 📂 mapper
+ ┃ ┃ ┃ ┃ ┗ 📂 service
  ┃ ┃ ┣ 📂 resources
  ┃ ┃ ┃ ┣ 📜 application.properties
  ┣ 📜 README.md
