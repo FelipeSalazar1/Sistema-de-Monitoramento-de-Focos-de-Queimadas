@@ -1,8 +1,8 @@
 package com.fiap.queimadas.monitoramentos.mapper;
 
-import com.fiap.queimadas.monitoramentos.domain.model.Regiao;
-import com.fiap.queimadas.monitoramentos.dto.RegiaoRequestDTO;
-import com.fiap.queimadas.monitoramentos.dto.RegiaoResponseDTO;
+import com.fiap.queimadas.monitoramentos.domain.model.regiao.Regiao;
+import com.fiap.queimadas.monitoramentos.dto.regiao.RegiaoRequestDTO;
+import com.fiap.queimadas.monitoramentos.dto.regiao.RegiaoResponseDTO;
 
 public class RegiaoMapper {
 

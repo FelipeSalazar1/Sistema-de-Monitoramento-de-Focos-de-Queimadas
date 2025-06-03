@@ -1,5 +1,8 @@
-package com.fiap.queimadas.monitoramentos.dto;
+package com.fiap.queimadas.monitoramentos.dto.regiao;
 
+import com.fiap.queimadas.monitoramentos.domain.model.regiao.RegiaoRisco;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
@@ -12,7 +15,10 @@ public class RegiaoRequestDTO {
     @NotBlank
     private String nome;
 
-    private String risco;
+    @Enumerated(EnumType.STRING)
+    @NotNull
+    private RegiaoRisco risco;
+
 
     @NotNull
     private Double latitude;

@@ -1,5 +1,6 @@
-package com.fiap.queimadas.monitoramentos.dto;
+package com.fiap.queimadas.monitoramentos.dto.regiao;
 
+import com.fiap.queimadas.monitoramentos.domain.model.regiao.RegiaoRisco;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +11,7 @@ import lombok.Setter;
 public class RegiaoResponseDTO {
     private Long id;
     private String nome;
-    private String risco;
+    private RegiaoRisco risco;
     private Double latitude;
     private Double longitude;
 }
