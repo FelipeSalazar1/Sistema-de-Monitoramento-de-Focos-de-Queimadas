@@ -58,13 +58,7 @@
    cd ignite-shield
    ```
 
-
-2. **Rode o projeto via Maven ou sua IDE favorita:**
-   ```bash
-   ./mvnw spring-boot:run
-   ```
-
-3. **Importe a coleção Insomnia (arquivo `.json`):**
+2. **Importe a coleção Insomnia (arquivo `.json`):**
    - Abra o Insomnia
    - Clique em **Importar** > **De arquivo**
    - Selecione o arquivo `queimadas-collection.json` gerado
