@@ -14,5 +14,5 @@ public class AlertaResponseDTO {
     private LocalDateTime dataAlerta;
     private String status;
     private Long focoId;
-    private Long agenteId; // pode ser null
+    private Long agenteId;
 }

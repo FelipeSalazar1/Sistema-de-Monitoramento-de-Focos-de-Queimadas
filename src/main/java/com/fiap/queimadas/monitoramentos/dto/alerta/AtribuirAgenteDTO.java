@@ -7,5 +7,4 @@ import lombok.Setter;
 @Setter
 public class AtribuirAgenteDTO {
     private Long agenteId;
-    private String status;
 }

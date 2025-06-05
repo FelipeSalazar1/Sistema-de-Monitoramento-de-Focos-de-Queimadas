@@ -35,7 +35,7 @@ public class AlertaController {
             @PathVariable Long id,
             @RequestBody AtribuirAgenteDTO dto) {
 
-        Alerta alerta = alertaService.atribuirAgente(id, dto.getAgenteId(), dto.getStatus());
+        Alerta alerta = alertaService.atribuirAgente(id, dto.getAgenteId());
         return AlertaMapper.toDTO(alerta);
     }
 
@@ -45,6 +45,8 @@ public class AlertaController {
             @RequestParam String status) {
 
         Alerta alerta = alertaService.atualizarStatus(id, status);
+        System.out.println(alerta.getStatus());
+
         return AlertaMapper.toDTO(alerta);
     }
 

@@ -30,7 +30,7 @@ public class AlertaService {
         return alertaRepository.save(alerta);
     }
 
-    public Alerta atribuirAgente(Long alertaId, Long agenteId, String status) {
+    public Alerta atribuirAgente(Long alertaId, Long agenteId) {
         Alerta alerta = alertaRepository.findById(alertaId)
                 .orElseThrow(() -> new RuntimeException("Alerta não encontrado"));
 
@@ -38,12 +38,11 @@ public class AlertaService {
                 .orElseThrow(() -> new RuntimeException("Agente não encontrado"));
 
         alerta.setAgente(agente);
-        alerta.setStatus(status);
 
         return alertaRepository.save(alerta);
     }
 
-    public Alerta atualizarStatus(Long alertaId,String status) {
+    public Alerta atualizarStatus(Long alertaId, String status) {
         Alerta alerta = alertaRepository.findById(alertaId)
                 .orElseThrow(() -> new RuntimeException("Alerta não encontrado"));
 
