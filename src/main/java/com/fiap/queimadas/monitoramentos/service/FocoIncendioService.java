@@ -1,6 +1,7 @@
 package com.fiap.queimadas.monitoramentos.service;
 
 import com.fiap.queimadas.monitoramentos.domain.model.FocoIncendio.FocoIncendio;
+import com.fiap.queimadas.monitoramentos.domain.model.alerta.Alerta;
 import com.fiap.queimadas.monitoramentos.dto.FocoIncendio.FocoIncendioRequestDTO;
 import com.fiap.queimadas.monitoramentos.dto.FocoIncendio.FocoIncendioResponseDTO;
 import com.fiap.queimadas.monitoramentos.mapper.FocoIncendioMapper;
@@ -10,15 +11,20 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import static com.fiap.queimadas.monitoramentos.domain.model.FocoIncendio.FocoSeveridade.GRAVE;
+
 @Service
 public class FocoIncendioService {
 
     private final FocoIncendioRepository focoRepository;
     private final SensorRepository sensorRepository;
+    private final AlertaService alertaService;
 
-    public FocoIncendioService(FocoIncendioRepository focoRepository, SensorRepository sensorRepository) {
+
+    public FocoIncendioService(FocoIncendioRepository focoRepository, SensorRepository sensorRepository, AlertaService alertaService) {
         this.focoRepository = focoRepository;
         this.sensorRepository = sensorRepository;
+        this.alertaService = alertaService;
     }
 
     public List<FocoIncendioResponseDTO> list() {
@@ -38,7 +44,12 @@ public class FocoIncendioService {
                 .orElseThrow(() -> new IllegalArgumentException("Sensor não encontrado"));
 
         FocoIncendio foco = FocoIncendioMapper.toEntity(dto, sensor);
-        return FocoIncendioMapper.toDTO(focoRepository.save(foco));
+        focoRepository.save(foco);
+
+        if (foco.getSeveridade() == GRAVE) {
+            alertaService.gerarAlertaParaFoco(foco);
+        }
+        return FocoIncendioMapper.toDTO(foco);
     }
 
     public FocoIncendioResponseDTO update(Long id, FocoIncendioRequestDTO dto) {

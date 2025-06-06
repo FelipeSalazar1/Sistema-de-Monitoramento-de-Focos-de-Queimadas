@@ -55,6 +55,6 @@ public class AlertaController {
         if (!repository.existsById(id)) {
             throw new IllegalArgumentException("Alerta não encontrado");
         }
-        repository.deleteById(id);
+        alertaService.delete(id);
     }
 }

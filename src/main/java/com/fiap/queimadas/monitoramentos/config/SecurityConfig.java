@@ -12,11 +12,11 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(csrf -> csrf.disable()) // desativa CSRF para facilitar testes em APIs REST
+                .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .anyRequest().authenticated() // exige autenticação para todas as rotas
+                        .anyRequest().authenticated()
                 )
-                .httpBasic(Customizer.withDefaults()); // usa autenticação HTTP Basic
+                .httpBasic(Customizer.withDefaults());
 
         return http.build();
     }
